@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TimeSense</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="fondo-oceano" aria-hidden="true">
+        <div id="tiburonAmigo" class="tiburon-amigo" role="button" tabindex="0">
+    <div id="mensajeTiburon" class="mensaje-tiburon">
+        ¡Hola!
+    </div>
+
+    <svg
+        viewBox="0 0 260 170"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="Tiburón interactivo"
+    >
+        <g class="cola-tiburon">
+            <path
+                d="M62 82
+                   C36 61 22 38 18 18
+                   C44 25 60 41 71 57
+                   C62 32 66 15 74 6
+                   C91 29 93 51 87 70
+                   C82 94 68 111 48 126
+                   C48 107 52 94 62 82Z"
+                fill="#3f8faa"
+                stroke="#061827"
+                stroke-width="8"
+                stroke-linejoin="round"
+            />
+        </g>
+
+        <path
+            d="M105 57
+               C110 28 128 10 147 4
+               C151 30 147 50 137 68Z"
+            fill="#4a9bb5"
+            stroke="#061827"
+            stroke-width="8"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M69 77
+               C96 38 161 31 211 53
+               C239 65 251 86 239 104
+               C224 127 174 140 124 128
+               C95 121 72 107 59 93
+               C52 86 57 80 69 77Z"
+            fill="#62bfd0"
+            stroke="#061827"
+            stroke-width="9"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M78 99
+               C116 120 182 124 231 96
+               C221 122 177 139 127 128
+               C99 122 84 111 78 99Z"
+            fill="#e7fbfc"
+        />
+
+        <path
+            class="aleta-tiburon"
+            d="M130 108
+               C112 130 109 149 115 162
+               C139 145 153 126 156 105Z"
+            fill="#408da9"
+            stroke="#061827"
+            stroke-width="8"
+            stroke-linejoin="round"
+        />
+
+        <circle
+            cx="205"
+            cy="71"
+            r="14"
+            fill="#ffffff"
+            stroke="#061827"
+            stroke-width="7"
+        />
+
+        <circle
+            cx="210"
+            cy="75"
+            r="6"
+            fill="#061827"
+        />
+
+        <circle
+            cx="207"
+            cy="71"
+            r="2.5"
+            fill="#ffffff"
+        />
+
+        <path
+            d="M190 54 Q204 45 219 53"
+            fill="none"
+            stroke="#061827"
+            stroke-width="6"
+            stroke-linecap="round"
+        />
+
+        <ellipse
+            cx="201"
+            cy="94"
+            rx="11"
+            ry="7"
+            fill="#f29bb0"
+            opacity="0.8"
+        />
+
+        <path
+            d="M194 100 Q213 116 235 98"
+            fill="#8b3046"
+            stroke="#061827"
+            stroke-width="7"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="M204 104
+               L209 113
+               L215 104
+               L221 111
+               L227 101"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="5"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M170 68 L173 84
+               M159 67 L162 83
+               M148 68 L151 82"
+            stroke="#2e748d"
+            stroke-width="5"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="M98 66 C121 49 157 46 181 53"
+            fill="none"
+            stroke="#a5edf0"
+            stroke-width="8"
+            stroke-linecap="round"
+            opacity="0.7"
+        />
+    </svg>
+</div>
+        <div class="rayo rayo-1"></div>
+        <div class="rayo rayo-2"></div>
+
+        <div class="burbuja-fondo burbuja-a"></div>
+        <div class="burbuja-fondo burbuja-b"></div>
+        <div class="burbuja-fondo burbuja-c"></div>
+        <div class="burbuja-fondo burbuja-d"></div>
+
+        <div class="pez-fondo pez-1"></div>
+        <div class="pez-fondo pez-2"></div>
+
+        <div class="suelo-marino"></div>
+    </div>
+
+    <div class="contenedor" id="pantallaInicio">
+
+        <h1>TimeSense</h1>
+
+        <p>Descubre cómo aprovechas tu tiempo.</p>
+
+        <input
+            id="nombre"
+            type="text"
+            placeholder="Nombre (opcional)"
+        >
+
+        <button id="btnComenzar" type="button">
+            Comenzar
+        </button>
+
+    </div>
+
+    <div class="contenedor" id="pantallaPregunta">
+
+        <p id="numeroPregunta">
+            Pregunta 1
+        </p>
+
+        <h2 id="textoPregunta">
+            ¿Qué haces normalmente cuando estás esperando?
+        </h2>
+
+        <div id="opciones"></div>
+
+        <button id="btnAtras" type="button">
+            ← Atrás
+        </button>
+
+    </div>
+<!-- =====================================
+     INSTRUCCIONES DE LA PRUEBA PVT
+===================================== -->
+
+<div
+    class="contenedor"
+    id="pantallaInstrucciones"
+>
+    <p class="etiqueta-prueba">
+        PRUEBA DE ATENCIÓN SOSTENIDA
+    </p>
+
+    <h2>
+        Prepárate para medir tu atención
+    </h2>
+
+    <div class="caja-instrucciones">
+
+    <p>
+        La prueba durará
+        <strong>1 minuto y 30 segundos</strong>.
+    </p>
+
+    <p>
+        Primero aparecerá una señal de espera.
+        Después de un tiempo aleatorio,
+        aparecerá un contador de milisegundos
+        en alguna parte del área de juego.
+    </p>
+
+    <div class="regla-juego regla-correcta">
+        <span class="simbolo-regla">
+            000
+        </span>
+
+        <span>
+            Cuando aparezcan los números,
+            tócalos tan rápido como puedas.
+        </span>
+    </div>
+
+    <div class="regla-juego regla-incorrecta">
+        <span class="simbolo-regla">
+            ✋
+        </span>
+
+        <span>
+            No toques el área de juego
+            antes de que aparezcan los números.
+        </span>
+    </div>
+
+    <p>
+        El objetivo aparecerá en diferentes lugares,
+        así que mantén la atención en toda el área de juego.
+    </p>
+
+    <p>
+        La prueba medirá tu tiempo de reacción
+        y también registrará respuestas anticipadas,
+        lapsos de atención y momentos en los que
+        no respondiste a tiempo.
+    </p>
+
+    <p>
+        Este proceso se repetirá varias veces
+        hasta que el tiempo llegue a cero.
+    </p>
+
+    <p class="aviso-prueba">
+        Esta actividad está inspirada en una prueba
+        de atención sostenida tipo PVT.
+        Es una adaptación educativa y no constituye
+        un diagnóstico médico.
+    </p>
+
+</div>
+
+    <button
+        id="btnIniciarPrueba"
+        type="button"
+    >
+       Comenzar práctica
+    </button>
+</div>
+
+<!-- =====================================
+     PANTALLA DE LA PRUEBA PVT
+===================================== -->
+
+<div
+    class="contenedor contenedor-juego"
+    id="pantallaJuego"
+>
+    <div class="cabecera-juego">
+
+        <div class="dato-juego">
+            <span>Tiempo</span>
+
+            <strong id="tiempoJuego">
+                90
+            </strong>
+        </div>
+
+        <div class="dato-juego">
+            <span>Respuestas</span>
+
+            <strong id="aciertosJuego">
+                0
+            </strong>
+        </div>
+
+        <div class="dato-juego">
+            <span>Anticipaciones</span>
+
+            <strong id="erroresJuego">
+                0
+            </strong>
+        </div>
+
+    </div>
+
+    <h2 id="tituloJuego">
+        Espera la señal
+    </h2>
+
+    <p id="mensajeJuego">
+        Toca únicamente cuando aparezca el contador.
+    </p>
+
+    <div
+        id="zonaJuego"
+        class="zona-juego zona-pvt"
+    >
+        <p id="cuentaRegresiva">
+            3
+        </p>
+    </div>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

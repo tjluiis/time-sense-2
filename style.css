@@ -1,0 +1,1580 @@
+/* =========================================
+   COLORES GENERALES
+========================================= */
+
+:root {
+    --azul-superficie: #5ee7f2;
+    --azul-claro: #22b8d3;
+    --azul-medio: #087aa8;
+    --azul-profundo: #06365f;
+    --azul-abismo: #031d38;
+
+    --turquesa: #55dce6;
+    --blanco: #ffffff;
+    --negro-marino: #061827;
+    --texto: #173447;
+}
+
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    position: relative;
+
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 75px 24px 120px;
+
+    overflow-x: hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--azul-superficie) 0%,
+            var(--azul-claro) 22%,
+            var(--azul-medio) 52%,
+            var(--azul-profundo) 78%,
+            var(--azul-abismo) 100%
+        );
+}
+
+
+/* =========================================
+   FONDO DEL OCÉANO
+========================================= */
+
+.fondo-oceano {
+    position: fixed;
+    inset: 0;
+
+    z-index: -10;
+
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Brillo de la superficie */
+
+.fondo-oceano::before {
+    content: "";
+
+    position: absolute;
+
+    top: -80px;
+    left: 50%;
+
+    width: 130%;
+    height: 330px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse at center top,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(215, 253, 255, 0.55) 18%,
+            rgba(132, 235, 244, 0.22) 38%,
+            transparent 68%
+        );
+}
+
+/* Textura pixelada muy suave */
+
+.fondo-oceano::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.07;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        32px 32px,
+        32px 32px;
+}
+
+
+/* =========================================
+   RAYOS DE LUZ
+========================================= */
+
+.rayo {
+    position: absolute;
+
+    top: -120px;
+
+    width: 180px;
+    height: 115vh;
+
+    opacity: 0.16;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(239, 255, 255, 0.95),
+            rgba(191, 248, 255, 0.34),
+            transparent
+        );
+
+    filter: blur(10px);
+
+    transform-origin: top center;
+
+    animation:
+        moverRayo 8s ease-in-out infinite alternate;
+}
+
+.rayo-1 {
+    left: 17%;
+
+    transform:
+        rotate(-13deg);
+}
+
+.rayo-2 {
+    right: 18%;
+
+    transform:
+        rotate(14deg);
+
+    animation-delay: -4s;
+}
+
+@keyframes moverRayo {
+    from {
+        opacity: 0.11;
+        margin-left: -18px;
+    }
+
+    to {
+        opacity: 0.23;
+        margin-left: 20px;
+    }
+}
+
+
+/* =========================================
+   BURBUJAS DEL FONDO
+========================================= */
+
+.burbuja-fondo {
+    position: absolute;
+
+    bottom: -70px;
+
+    width: 20px;
+    height: 20px;
+
+    border:
+        3px solid rgba(220, 253, 255, 0.68);
+
+    border-radius: 50%;
+
+    box-shadow:
+        inset 3px 3px 0 rgba(255, 255, 255, 0.28);
+
+    animation:
+        subirBurbujaFondo 10s linear infinite;
+}
+
+.burbuja-a {
+    left: 8%;
+
+    width: 18px;
+    height: 18px;
+
+    animation-duration: 9s;
+}
+
+.burbuja-b {
+    left: 28%;
+
+    width: 30px;
+    height: 30px;
+
+    animation-duration: 13s;
+    animation-delay: -5s;
+}
+
+.burbuja-c {
+    right: 23%;
+
+    width: 15px;
+    height: 15px;
+
+    animation-duration: 11s;
+    animation-delay: -2s;
+}
+
+.burbuja-d {
+    right: 7%;
+
+    width: 25px;
+    height: 25px;
+
+    animation-duration: 14s;
+    animation-delay: -7s;
+}
+
+@keyframes subirBurbujaFondo {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(0)
+            translateX(0)
+            scale(0.7);
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    55% {
+        transform:
+            translateY(-55vh)
+            translateX(20px)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-115vh)
+            translateX(-12px)
+            scale(1.25);
+    }
+}
+
+
+/* =========================================
+   PECES LEJANOS
+========================================= */
+
+.pez-fondo {
+    position: absolute;
+
+    width: 40px;
+    height: 18px;
+
+    opacity: 0.28;
+
+    background: #042b4e;
+
+    border-radius:
+        60% 45% 45% 60%;
+
+    animation:
+        nadarPez 18s linear infinite;
+}
+
+.pez-fondo::before {
+    content: "";
+
+    position: absolute;
+
+    left: -14px;
+    top: 2px;
+
+    width: 0;
+    height: 0;
+
+    border-top:
+        7px solid transparent;
+
+    border-bottom:
+        7px solid transparent;
+
+    border-right:
+        17px solid #042b4e;
+}
+
+.pez-fondo::after {
+    content: "";
+
+    position: absolute;
+
+    right: 8px;
+    top: 5px;
+
+    width: 4px;
+    height: 4px;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    border-radius: 50%;
+}
+
+.pez-1 {
+    top: 25%;
+    left: -80px;
+
+    animation-duration: 20s;
+}
+
+.pez-2 {
+    top: 57%;
+    left: -100px;
+
+    transform: scale(0.75);
+
+    animation-duration: 27s;
+    animation-delay: -11s;
+}
+
+@keyframes nadarPez {
+    from {
+        left: -100px;
+    }
+
+    to {
+        left: calc(100vw + 100px);
+    }
+}
+
+
+/* =========================================
+   SUELO MARINO
+========================================= */
+
+.suelo-marino {
+    position: absolute;
+
+    left: -5%;
+    right: -5%;
+    bottom: -30px;
+
+    height: 160px;
+
+    background:
+        radial-gradient(
+            ellipse at 8% 95%,
+            #03182f 0 45%,
+            transparent 46%
+        ),
+        radial-gradient(
+            ellipse at 33% 110%,
+            #052744 0 50%,
+            transparent 51%
+        ),
+        radial-gradient(
+            ellipse at 67% 105%,
+            #03182f 0 47%,
+            transparent 48%
+        ),
+        radial-gradient(
+            ellipse at 94% 110%,
+            #052744 0 52%,
+            transparent 53%
+        );
+}
+
+.suelo-marino::before {
+    content: "";
+
+    position: absolute;
+
+    left: 5%;
+    bottom: 45px;
+
+    width: 18px;
+    height: 95px;
+
+    background: #063554;
+
+    border-radius: 70% 30% 0 0;
+
+    transform: rotate(-9deg);
+
+    box-shadow:
+        16vw 22px 0 #052e4d,
+        34vw -5px 0 #063554,
+        53vw 25px 0 #052e4d,
+        72vw -12px 0 #063554,
+        88vw 18px 0 #052e4d;
+}
+.suelo-marino::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12%;
+    bottom: 22px;
+
+    width: 95px;
+    height: 45px;
+
+    background: #05243f;
+
+    border-radius: 50% 60% 40% 45%;
+
+    box-shadow:
+        27vw 5px 0 #041f38,
+        55vw -4px 0 #05243f,
+        76vw 8px 0 #041f38;
+}
+
+
+/* =========================================
+   TARJETA PRINCIPAL
+========================================= */
+
+.contenedor {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    max-width: 540px;
+
+    padding:
+        50px 38px 42px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(240, 253, 255, 0.97)
+        );
+
+    border:
+        5px solid var(--negro-marino);
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        12px 14px 0 var(--negro-marino),
+        0 30px 65px rgba(0, 15, 35, 0.38);
+
+    animation:
+        aparecerTarjeta 0.45s ease;
+}
+
+
+/* Decoración superior estilo cómic */
+
+.contenedor::before {
+    content: "";
+
+    position: absolute;
+
+    top: -58px;
+    left: 50%;
+
+    width: 235px;
+    height: 92px;
+
+    transform:
+        translateX(-50%)
+        rotate(-2deg);
+
+    background:
+        var(--turquesa);
+
+    border:
+        5px solid var(--negro-marino);
+
+    clip-path: polygon(
+        0% 47%,
+        13% 34%,
+        7% 7%,
+        31% 26%,
+        42% 0%,
+        54% 28%,
+        76% 6%,
+        70% 35%,
+        100% 46%,
+        77% 59%,
+        94% 94%,
+        62% 69%,
+        50% 100%,
+        38% 69%,
+        7% 93%,
+        25% 58%
+    );
+
+    z-index: -1;
+}
+
+.contenedor::after {
+    content: "TIME!";
+
+    position: absolute;
+
+    top: -34px;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-2deg);
+
+    color: var(--blanco);
+
+    font-size: 24px;
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    -webkit-text-stroke:
+        2px var(--negro-marino);
+
+    text-shadow:
+        3px 3px 0 var(--negro-marino);
+}
+
+
+/* =========================================
+   TÍTULOS Y TEXTOS
+========================================= */
+
+h1 {
+    margin:
+        8px 0 9px;
+
+    color: var(--blanco);
+
+    font-size: 50px;
+    font-weight: 900;
+
+    letter-spacing: -3px;
+    text-transform: uppercase;
+
+    -webkit-text-stroke:
+        3px var(--negro-marino);
+
+    text-shadow:
+        4px 4px 0 var(--negro-marino),
+        8px 8px 0 #20b6c8;
+}
+
+h2 {
+    margin:
+        19px 0 25px;
+
+    color: #102d40;
+
+    font-size: 25px;
+    line-height: 1.32;
+}
+
+p {
+    margin: 8px 0;
+
+    color: #476472;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   NÚMERO DE PREGUNTA
+========================================= */
+
+#numeroPregunta {
+    display: inline-block;
+
+    margin: 5px 0 8px;
+    padding: 8px 16px;
+
+    background: #d1f8fb;
+    color: #075979;
+
+    border:
+        3px solid var(--negro-marino);
+
+    border-radius: 50px;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    box-shadow:
+        4px 4px 0 var(--negro-marino);
+}
+
+
+/* =========================================
+   CAMPO DEL NOMBRE
+========================================= */
+
+input {
+    width: 100%;
+
+    margin-top: 25px;
+    padding: 16px 18px;
+
+    background: #f5fdff;
+    color: #102d40;
+
+    border:
+        3px solid var(--negro-marino);
+
+    border-radius: 14px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    box-shadow:
+        5px 5px 0 #8adbe4;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+}
+
+input:focus {
+    background: var(--blanco);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        7px 7px 0 #42cbd7;
+}
+
+input::placeholder {
+    color: #6c8793;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+button {
+    width: 100%;
+
+    margin-top: 14px;
+    padding: 16px 18px;
+
+    background: #087fa7;
+    color: var(--blanco);
+
+    border:
+        3px solid var(--negro-marino);
+
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        6px 6px 0 var(--negro-marino);
+
+    transition:
+        transform 0.17s,
+        box-shadow 0.17s,
+        background 0.17s;
+}
+
+button:hover {
+    background: #0799bd;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        8px 9px 0 var(--negro-marino);
+}
+
+button:active {
+    transform:
+        translateY(3px);
+
+    box-shadow:
+        3px 3px 0 var(--negro-marino);
+}
+
+#btnComenzar {
+    margin-top: 22px;
+
+    background: var(--turquesa);
+    color: var(--negro-marino);
+
+    font-size: 18px;
+}
+
+#btnComenzar:hover {
+    background: #7cebf0;
+}
+
+#btnAtras {
+    display: none;
+
+    margin-top: 25px;
+
+    background: var(--blanco);
+    color: #345364;
+
+    box-shadow:
+        5px 5px 0 #72aabd;
+}
+
+#btnAtras:hover {
+    background: #def8fa;
+}
+
+
+/* =========================================
+   PANTALLAS
+========================================= */
+
+#pantallaPregunta {
+    display: none;
+}
+
+#opciones {
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   RESULTADOS
+========================================= */
+
+.resultado #numeroPregunta {
+    background: var(--turquesa);
+    color: var(--negro-marino);
+
+    font-size: 17px;
+}
+
+.resultado #textoPregunta {
+    margin-top: 27px;
+
+    color: #102d40;
+
+    font-size: 29px;
+    font-weight: 900;
+}
+
+.resultado #opciones > p {
+    margin-top: 24px;
+    padding: 17px;
+
+    background: #d9f7fa;
+    color: #075979;
+
+    border:
+        3px solid var(--negro-marino);
+
+    border-radius: 14px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    box-shadow:
+        5px 5px 0 var(--negro-marino);
+}
+
+
+/* =========================================
+   RECOMENDACIONES
+========================================= */
+
+.posibilidades {
+    margin-top: 25px;
+    padding: 20px;
+
+    background: #def8fa;
+
+    border:
+        3px solid var(--negro-marino);
+
+    border-radius: 16px;
+
+    text-align: left;
+
+    box-shadow:
+        6px 6px 0 var(--negro-marino);
+}
+
+.posibilidades h3 {
+    margin-top: 0;
+
+    color: #102d40;
+
+    text-align: center;
+}
+
+.posibilidades p {
+    color: #075979;
+}
+
+
+/* =========================================
+   ANIMACIÓN DE ENTRADA
+========================================= */
+
+@keyframes aparecerTarjeta {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   DISEÑO PARA TELÉFONOS
+========================================= */
+
+@media (max-width: 700px) {
+    body {
+        align-items: flex-start;
+
+        padding:
+            78px
+            16px
+            125px;
+    }
+
+    .contenedor {
+        padding:
+            43px
+            21px
+            32px;
+
+        border-width: 4px;
+        border-radius: 25px;
+
+        box-shadow:
+            8px 9px 0 var(--negro-marino),
+            0 22px 42px rgba(0, 15, 35, 0.34);
+    }
+
+    .contenedor::before {
+        top: -51px;
+
+        width: 198px;
+        height: 80px;
+    }
+
+    .contenedor::after {
+        top: -30px;
+
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 39px;
+
+        -webkit-text-stroke:
+            2px var(--negro-marino);
+
+        text-shadow:
+            3px 3px 0 var(--negro-marino),
+            6px 6px 0 #20b6c8;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    button {
+        padding:
+            15px 13px;
+
+        font-size: 15px;
+    }
+
+    .pez-fondo {
+        opacity: 0.18;
+    }
+
+    .suelo-marino {
+        height: 125px;
+    }
+
+    .rayo {
+        width: 100px;
+    }
+}
+
+
+/* =========================================
+   PANTALLAS MUY PEQUEÑAS
+========================================= */
+
+@media (max-width: 380px) {
+    body {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    .contenedor {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+}
+
+
+/* =========================================
+   REDUCIR MOVIMIENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .rayo,
+    .burbuja-fondo,
+    .pez-fondo,
+    .contenedor {
+        animation: none;
+    }
+}
+/* =========================================
+   TIBURÓN INTERACTIVO
+========================================= */
+
+.tiburon-amigo {
+    position: fixed;
+
+    left: 24px;
+    bottom: 18px;
+
+    width: 205px;
+
+    z-index: 30;
+
+    cursor: pointer;
+    user-select: none;
+
+    filter:
+        drop-shadow(8px 9px 0 rgba(0, 18, 37, 0.65));
+
+    animation:
+        flotarTiburon 3.5s ease-in-out infinite;
+
+    transition:
+        transform 0.2s,
+        filter 0.2s;
+}
+
+.tiburon-amigo:hover {
+    transform:
+        translateY(-8px)
+        scale(1.05);
+
+    filter:
+        drop-shadow(10px 11px 0 rgba(0, 18, 37, 0.62));
+}
+
+.tiburon-amigo svg {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+.tiburon-amigo.reaccionando {
+    animation: flotarTiburon 3.5s ease-in-out infinite;
+}
+
+.tiburon-amigo.reaccionando svg {
+    animation: reaccionDibujoTiburon 0.75s ease;
+}
+
+.cola-tiburon {
+    transform-origin: 70px 82px;
+
+    animation:
+        moverColaTiburon 0.65s ease-in-out infinite alternate;
+}
+
+.aleta-tiburon {
+    transform-origin: 140px 110px;
+
+    animation:
+        moverAletaTiburon 1.2s ease-in-out infinite alternate;
+}
+
+
+/* Mensaje */
+
+.mensaje-tiburon {
+    position: absolute;
+
+    left: 135px;
+    bottom: 118px;
+
+    width: 175px;
+
+    padding: 11px 13px;
+
+    background: #ffffff;
+    color: #061827;
+
+    border: 4px solid #061827;
+    border-radius: 14px;
+
+    box-shadow: 6px 6px 0 #061827;
+
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1.3;
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateY(8px)
+        scale(0.92);
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s,
+        visibility 0.2s,
+        transform 0.2s;
+}
+
+.mensaje-tiburon.visible {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.mensaje-tiburon::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    bottom: -17px;
+
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 17px solid #061827;
+}
+
+
+/* Burbujas del tiburón */
+
+.burbuja-tiburon {
+    position: fixed;
+
+    width: 14px;
+    height: 14px;
+
+    z-index: 29;
+
+    border:
+        3px solid rgba(224, 254, 255, 0.95);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation:
+        burbujaDelTiburon 1.6s ease-out forwards;
+}
+
+
+@keyframes flotarTiburon {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-1deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(1deg);
+    }
+}
+
+@keyframes moverColaTiburon {
+    from {
+        transform: rotate(-8deg);
+    }
+
+    to {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes moverAletaTiburon {
+    from {
+        transform: rotate(-2deg);
+    }
+
+    to {
+        transform: rotate(7deg);
+    }
+}
+
+@keyframes reaccionTiburon {
+    0% {
+        transform:
+            translateX(0)
+            rotate(0);
+    }
+
+    25% {
+        transform:
+            translateX(22px)
+            translateY(-16px)
+            rotate(-5deg)
+            scale(1.08);
+    }
+
+    55% {
+        transform:
+            translateX(-5px)
+            translateY(3px)
+            rotate(3deg);
+    }
+
+    80% {
+        transform:
+            translateX(8px)
+            translateY(-5px)
+            rotate(-2deg);
+    }
+
+    100% {
+        transform:
+            translateX(0)
+            translateY(0)
+            rotate(0);
+    }
+}
+
+@keyframes burbujaDelTiburon {
+    from {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(0.7);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            translate(25px, -125px)
+            scale(1.5);
+    }
+}
+
+
+/* Tiburón en teléfono */
+
+@media (max-width: 700px) {
+    .tiburon-amigo {
+        left: 7px;
+        bottom: 7px;
+
+        width: 118px;
+    }
+
+    .mensaje-tiburon {
+        left: 80px;
+        bottom: 78px;
+
+        min-width: 115px;
+        max-width: 150px;
+
+        padding: 8px 9px;
+
+        font-size: 11px;
+    }
+}
+.tiburon-amigo {
+    pointer-events: auto;
+}
+
+.tiburon-amigo svg,
+.tiburon-amigo svg * {
+    pointer-events: none;
+}
+@keyframes reaccionDibujoTiburon {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0) scale(1);
+    }
+
+    30% {
+        transform: translateX(50px) translateY(-25px) rotate(-8deg) scale(1.12);
+    }
+
+    60% {
+        transform: translateX(15px) translateY(5px) rotate(4deg) scale(0.98);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0) rotate(0) scale(1);
+    }
+}
+/* =========================================
+   INSTRUCCIONES DEL JUEGO
+========================================= */
+
+#pantallaInstrucciones {
+    display: none;
+}
+
+.etiqueta-prueba {
+    display: inline-block;
+
+    margin:
+        5px 0 12px;
+
+    padding:
+        8px 16px;
+
+    background:
+        #d1f8fb;
+
+    color:
+        #075979;
+
+    border:
+        3px solid var(--negro-marino);
+
+    border-radius:
+        50px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+    box-shadow:
+        4px 4px 0 var(--negro-marino);
+}
+
+.caja-instrucciones {
+    margin-top:
+        20px;
+
+    padding:
+        18px;
+
+    background:
+        #e3f9fb;
+
+    border:
+        3px solid var(--negro-marino);
+
+    border-radius:
+        17px;
+
+    text-align:
+        left;
+
+    box-shadow:
+        6px 6px 0 var(--negro-marino);
+}
+
+.caja-instrucciones p {
+    color:
+        #173447;
+
+    text-align:
+        center;
+}
+
+.regla-juego {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    margin:
+        15px 0;
+
+    padding:
+        14px;
+
+    background:
+        #ffffff;
+
+    border:
+        3px solid var(--negro-marino);
+
+    border-radius:
+        13px;
+
+    color:
+        #173447;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.4;
+
+    box-shadow:
+        4px 4px 0 var(--negro-marino);
+}
+
+.regla-correcta {
+    border-left:
+        10px solid #26b879;
+}
+
+.regla-incorrecta {
+    border-left:
+        10px solid #e95d67;
+}
+
+.simbolo-regla {
+    flex-shrink:
+        0;
+
+    font-size:
+        34px;
+}
+
+.aviso-prueba {
+    margin-top:
+        20px !important;
+
+    padding:
+        12px;
+
+    background:
+        #fff1bd;
+
+    border:
+        3px solid var(--negro-marino);
+
+    border-radius:
+        11px;
+
+    font-weight:
+        800;
+}
+
+#btnIniciarPrueba {
+    margin-top:
+        25px;
+
+    background:
+        var(--turquesa);
+
+    color:
+        var(--negro-marino);
+
+    font-size:
+        18px;
+}
+#pantallaJuego {
+    display: none;
+}
+.zona-juego {
+    position: relative;
+
+    width: 100%;
+    height: 420px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #85eef3 0%,
+            #24a9c9 45%,
+            #07557f 100%
+        );
+
+    border: 5px solid var(--negro-marino);
+    border-radius: 20px;
+
+    box-shadow:
+        inset 0 0 35px rgba(0, 31, 61, 0.3),
+        7px 8px 0 var(--negro-marino);
+
+    touch-action: manipulation;
+}
+/* =====================================
+   PRUEBA DE ATENCIÓN PVT
+===================================== */
+
+.zona-pvt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.punto-espera {
+    color: rgba(
+        255,
+        255,
+        255,
+        0.72
+    );
+
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.estimulo-pvt {
+    width: 115px;
+    height: 90px;
+    min-width: 0;
+    min-height: 0;
+
+    margin: 0;
+    padding: 0;
+
+    border: 4px solid var(--negro-marino);
+    border-radius: 15px;
+
+    background: #eafcff;
+    color: #e33434;
+
+    font-family: inherit;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    box-shadow: 5px 6px 0 var(--negro-marino);
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.estimulo-pvt:active {
+    transform:
+        translate(
+            5px,
+            5px
+        );
+
+    box-shadow:
+        3px
+        4px
+        0
+        var(--negro-marino);
+}
+
+.resultado-reaccion {
+    padding:
+        20px
+        30px;
+
+    border:
+        4px
+        solid
+        var(--negro-marino);
+
+    border-radius: 20px;
+
+    background: #d9fff0;
+    color: var(--negro-marino);
+
+    font-size:
+        clamp(
+            34px,
+            8vw,
+            62px
+        );
+
+    font-weight: 900;
+
+    box-shadow:
+        7px
+        8px
+        0
+        var(--negro-marino);
+}
+
+.resultado-reaccion.perdida {
+    background: #ffd7d7;
+    color: #9c1d1d;
+
+    font-size:
+        clamp(
+            25px,
+            6vw,
+            45px
+        );
+}
+
+@media (
+    max-width: 700px
+) {
+   @media (max-width: 700px) {
+    .estimulo-pvt {
+        width: 100px;
+        height: 80px;
+        font-size: 34px;
+    }
+}
+}
