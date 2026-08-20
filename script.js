@@ -60,11 +60,10 @@ const cuentaRegresiva =
         "cuentaRegresiva"
     );
 const URL_GOOGLE_SHEETS =
-    "https://script.google.com/macros/s/AKfycbz1SBir_qKL9iJIYRfjqsrVy4HtaxgwQGhoy_QZHprNWWuCfNlDr_2A5N38flIGowlM/exec";
+    "https://script.google.com/macros/s/AKfycbx94HVs_jQQtRW5sRCGasrJ7U-AtRIS6eEIzoHtvLWrGnVb9BT8Gsmm6LfXthdkrGi5/exec";
 // PREGUNTAS DEL CUESTIONARIO
 
 const bancoPreguntas = [
-
     // ÚNICA PREGUNTA OBLIGATORIA
     {
         campo: "edad",
@@ -87,10 +86,10 @@ const bancoPreguntas = [
         tipo: "una",
         opciones: [
             { texto: "Me levanto sin revisar el celular", valor: 0 },
-            { texto: "Lo reviso después de arreglarme", valor: 5 },
-            { texto: "Lo reviso brevemente desde la cama", valor: 10 },
-            { texto: "Permanezco un rato usándolo antes de levantarme", valor: 20 },
-            { texto: "Es lo primero que hago y sigo usándolo bastante tiempo", valor: 40 }
+            { texto: "Lo reviso después de arreglarme", valor: 3 },
+            { texto: "Lo reviso brevemente desde la cama", valor: 8 },
+            { texto: "Permanezco un rato usándolo antes de levantarme", valor: 18 },
+            { texto: "Es lo primero que hago y sigo usándolo bastante tiempo", valor: 30 }
         ]
     },
 
@@ -103,8 +102,8 @@ const bancoPreguntas = [
             { texto: "No utilizo el celular", valor: 0 },
             { texto: "Lo reviso rápidamente", valor: 5 },
             { texto: "Veo algunas publicaciones o mensajes", valor: 15 },
-            { texto: "Permanezco bastante tiempo utilizándolo", valor: 35 },
-            { texto: "Lo utilizo hasta quedarme dormido", valor: 60 }
+            { texto: "Permanezco bastante tiempo utilizándolo", valor: 30 },
+            { texto: "Lo utilizo hasta quedarme dormido", valor: 50 }
         ]
     },
 
@@ -115,10 +114,10 @@ const bancoPreguntas = [
         tipo: "una",
         opciones: [
             { texto: "Dejo el celular lejos de la mesa", valor: 0 },
-            { texto: "Lo tengo cerca, pero no lo utilizo", valor: 2 },
-            { texto: "Lo reviso una o dos veces", valor: 5 },
-            { texto: "Lo utilizo durante parte de la comida", valor: 12 },
-            { texto: "Lo utilizo durante casi toda la comida", valor: 25 }
+            { texto: "Lo tengo cerca, pero no lo utilizo", valor: 1 },
+            { texto: "Lo reviso una o dos veces", valor: 4 },
+            { texto: "Lo utilizo durante parte de la comida", valor: 10 },
+            { texto: "Lo utilizo durante casi toda la comida", valor: 18 }
         ]
     },
 
@@ -129,10 +128,10 @@ const bancoPreguntas = [
         tipo: "una",
         opciones: [
             { texto: "Lo dejo fuera", valor: 0 },
-            { texto: "Lo llevo conmigo, pero no lo reviso", valor: 2 },
-            { texto: "Lo reviso rápidamente", valor: 5 },
-            { texto: "Lo utilizo durante buena parte del tiempo", valor: 12 },
-            { texto: "Lo utilizo prácticamente todo el tiempo", valor: 25 }
+            { texto: "Lo llevo conmigo, pero no lo reviso", valor: 1 },
+            { texto: "Lo reviso rápidamente", valor: 3 },
+            { texto: "Lo utilizo durante buena parte del tiempo", valor: 7 },
+            { texto: "Lo utilizo prácticamente todo el tiempo", valor: 12 }
         ]
     },
 
@@ -145,8 +144,8 @@ const bancoPreguntas = [
             { texto: "Comienzo la tarea sin revisarlo", valor: 0 },
             { texto: "Lo reviso una vez antes de empezar", valor: 3 },
             { texto: "Reviso rápidamente algunas aplicaciones", valor: 8 },
-            { texto: "Retraso bastante el inicio de la tarea", valor: 20 },
-            { texto: "Termino usando el celular y dejo la tarea para después", valor: 40 }
+            { texto: "Retraso bastante el inicio de la tarea", valor: 18 },
+            { texto: "Termino usando el celular y dejo la tarea para después", valor: 30 }
         ]
     },
 
@@ -158,9 +157,9 @@ const bancoPreguntas = [
         opciones: [
             { texto: "La ignoro hasta terminar", valor: 0 },
             { texto: "La reviso varios minutos después", valor: 2 },
-            { texto: "Miro quién escribió y continúo", valor: 5 },
-            { texto: "Respondo y reviso otras aplicaciones", valor: 12 },
-            { texto: "Dejo de estudiar y continúo usando el celular", valor: 25 }
+            { texto: "Miro quién escribió y continúo", valor: 4 },
+            { texto: "Respondo y reviso otras aplicaciones", valor: 10 },
+            { texto: "Dejo de estudiar y continúo usando el celular", valor: 20 }
         ]
     },
 
@@ -171,10 +170,10 @@ const bancoPreguntas = [
         tipo: "una",
         opciones: [
             { texto: "No reviso el celular hasta terminar", valor: 0 },
-            { texto: "Lo reviso una sola vez", valor: 5 },
-            { texto: "Lo reviso varias veces brevemente", valor: 10 },
-            { texto: "Interrumpo frecuentemente la tarea", valor: 25 },
-            { texto: "Paso largos periodos usándolo", valor: 45 }
+            { texto: "Lo reviso una sola vez", valor: 3 },
+            { texto: "Lo reviso varias veces brevemente", valor: 8 },
+            { texto: "Interrumpo frecuentemente la tarea", valor: 18 },
+            { texto: "Paso largos periodos usándolo", valor: 30 }
         ]
     },
 
@@ -184,11 +183,11 @@ const bancoPreguntas = [
         texto: "Cuando empiezas a ver videos cortos...",
         tipo: "una",
         opciones: [
-            { texto: "Veo uno y cierro la aplicación", valor: 3 },
-            { texto: "Veo algunos videos y salgo", valor: 10 },
-            { texto: "Permanezco un rato mirando videos", valor: 25 },
-            { texto: "Pierdo la noción del tiempo", valor: 45 },
-            { texto: "Continúo hasta que algo me obliga a detenerme", valor: 75 }
+            { texto: "Veo uno y cierro la aplicación", valor: 2 },
+            { texto: "Veo algunos videos y salgo", valor: 8 },
+            { texto: "Permanezco un rato mirando videos", valor: 20 },
+            { texto: "Pierdo la noción del tiempo", valor: 40 },
+            { texto: "Continúo hasta que algo me obliga a detenerme", valor: 60 }
         ]
     },
 
@@ -198,11 +197,11 @@ const bancoPreguntas = [
         texto: "Cuando entras a una red social para revisar algo...",
         tipo: "una",
         opciones: [
-            { texto: "Reviso lo necesario y cierro", valor: 3 },
-            { texto: "Miro algunas publicaciones adicionales", valor: 10 },
-            { texto: "Paso un rato recorriendo contenido", valor: 20 },
-            { texto: "Cambio entre varias secciones o perfiles", valor: 40 },
-            { texto: "Permanezco mucho más tiempo del que pensaba", valor: 60 }
+            { texto: "Reviso lo necesario y cierro", valor: 2 },
+            { texto: "Miro algunas publicaciones adicionales", valor: 7 },
+            { texto: "Paso un rato recorriendo contenido", valor: 15 },
+            { texto: "Cambio entre varias secciones o perfiles", valor: 30 },
+            { texto: "Permanezco mucho más tiempo del que pensaba", valor: 50 }
         ]
     },
 
@@ -213,10 +212,10 @@ const bancoPreguntas = [
         tipo: "una",
         opciones: [
             { texto: "No juego en el celular", valor: 0 },
-            { texto: "Cierro el juego al terminar", valor: 10 },
-            { texto: "Juego una partida adicional", valor: 20 },
-            { texto: "Juego varias partidas seguidas", valor: 45 },
-            { texto: "Sigo jugando hasta que debo hacer otra cosa", valor: 90 }
+            { texto: "Cierro el juego al terminar", valor: 5 },
+            { texto: "Juego una partida adicional", valor: 12 },
+            { texto: "Juego varias partidas seguidas", valor: 30 },
+            { texto: "Sigo jugando hasta que debo hacer otra cosa", valor: 50 }
         ]
     },
 
@@ -226,11 +225,11 @@ const bancoPreguntas = [
         texto: "Cuando respondes un mensaje, normalmente...",
         tipo: "una",
         opciones: [
-            { texto: "Respondo lo necesario y cierro", valor: 3 },
-            { texto: "Intercambio algunos mensajes", valor: 8 },
-            { texto: "Continúo conversando durante un rato", valor: 20 },
-            { texto: "Entro también a otros chats o aplicaciones", valor: 40 },
-            { texto: "Permanezco conversando por mucho tiempo", valor: 60 }
+            { texto: "Respondo lo necesario y cierro", valor: 2 },
+            { texto: "Intercambio algunos mensajes", valor: 5 },
+            { texto: "Continúo conversando durante un rato", valor: 12 },
+            { texto: "Entro también a otros chats o aplicaciones", valor: 25 },
+            { texto: "Permanezco conversando por mucho tiempo", valor: 40 }
         ]
     },
 
@@ -244,7 +243,7 @@ const bancoPreguntas = [
             { texto: "Espero un momento antes de revisarlo", valor: 3 },
             { texto: "Lo reviso brevemente", valor: 8 },
             { texto: "Abro varias aplicaciones para entretenerme", valor: 20 },
-            { texto: "Puedo permanecer mucho tiempo usándolo sin notarlo", valor: 40 }
+            { texto: "Puedo permanecer mucho tiempo usándolo sin notarlo", valor: 35 }
         ]
     },
 
@@ -255,10 +254,10 @@ const bancoPreguntas = [
         tipo: "una",
         opciones: [
             { texto: "Observo el camino o converso", valor: 0 },
-            { texto: "Reviso el celular solo al inicio o al final", valor: 5 },
-            { texto: "Lo utilizo por momentos", valor: 15 },
-            { texto: "Lo utilizo durante buena parte del trayecto", valor: 30 },
-            { texto: "Lo utilizo prácticamente durante todo el trayecto", valor: 60 }
+            { texto: "Reviso el celular solo al inicio o al final", valor: 3 },
+            { texto: "Lo utilizo por momentos", valor: 10 },
+            { texto: "Lo utilizo durante buena parte del trayecto", valor: 20 },
+            { texto: "Lo utilizo prácticamente durante todo el trayecto", valor: 35 }
         ]
     },
 
@@ -269,14 +268,13 @@ const bancoPreguntas = [
         tipo: "una",
         opciones: [
             { texto: "Cierro el celular", valor: 0 },
-            { texto: "A veces reviso una aplicación más", valor: 5 },
-            { texto: "Suelo abrir otra aplicación", valor: 10 },
-            { texto: "Paso por varias aplicaciones", valor: 20 },
-            { texto: "Sigo cambiando de aplicación sin un objetivo claro", valor: 40 }
+            { texto: "A veces reviso una aplicación más", valor: 3 },
+            { texto: "Suelo abrir otra aplicación", valor: 8 },
+            { texto: "Paso por varias aplicaciones", valor: 18 },
+            { texto: "Sigo cambiando de aplicación sin un objetivo claro", valor: 30 }
         ]
     }
 ];
-
 const preguntas = bancoPreguntas; 
 
 // Control del cuestionario
@@ -370,50 +368,18 @@ function mostrarResultado() {
         return total;
     }, 0);
 
-    // =========================================
-// TIEMPO ESTIMADO DE USO DEL CELULAR
-// =========================================
+    let nivelUso = 1;
 
-const minutosEstimados = puntajeHabitos;
+    if (puntajeHabitos >= 270) {
+        nivelUso = 5;
+    } else if (puntajeHabitos >= 210) {
+        nivelUso = 4;
+    } else if (puntajeHabitos >= 150) {
+        nivelUso = 3;
+    } else if (puntajeHabitos >= 90) {
+        nivelUso = 2;
+    }
 
-const horasEstimadas =
-    Math.floor(minutosEstimados / 60);
-
-const minutosSobrantes =
-    minutosEstimados % 60;
-
-
-// =========================================
-// NIVEL SEGÚN HORAS ESTIMADAS
-// =========================================
-
-let nivelUso = 1;
-
-// Menos de 2 horas = MUY BAJO
-if (minutosEstimados < 120) {
-
-    nivelUso = 1;
-
-// De 2 a menos de 4 horas = BAJO
-} else if (minutosEstimados < 240) {
-
-    nivelUso = 2;
-
-// De 4 a menos de 6 horas = MODERADO
-} else if (minutosEstimados < 360) {
-
-    nivelUso = 3;
-
-// De 6 a menos de 8 horas = ALTO
-} else if (minutosEstimados < 480) {
-
-    nivelUso = 4;
-
-// 8 horas o más = MUY ALTO
-} else {
-
-    nivelUso = 5;
-}
     const niveles = {
     1: {
         nombre: "muy bajo",
@@ -483,28 +449,7 @@ if (minutosEstimados < 120) {
     const horasSemanales = Math.floor(minutosSemanales / 60);
     const minutosRestantes = minutosSemanales % 60;
     const nombre = nombreInput.value.trim();
-let textoTiempoEstimado = "";
 
-if (horasEstimadas > 0) {
-
-    textoTiempoEstimado =
-        horasEstimadas +
-        (horasEstimadas === 1 ? " hora" : " horas");
-
-    if (minutosSobrantes > 0) {
-
-        textoTiempoEstimado +=
-            " y " +
-            minutosSobrantes +
-            " minutos";
-    }
-
-} else {
-
-    textoTiempoEstimado =
-        minutosSobrantes +
-        " minutos";
-}
     let tiempoSemanal = "";
 
     if (horasSemanales > 0) {
@@ -526,17 +471,7 @@ if (horasEstimadas > 0) {
 
     numeroPregunta.textContent = "TU RESULTADO";
     opciones.innerHTML = "";
-const resultadoTiempo =
-    document.createElement("p");
 
-resultadoTiempo.textContent =
-    "Tiempo estimado de uso diario: " +
-    textoTiempoEstimado +
-    ".";
-
-opciones.appendChild(
-    resultadoTiempo
-);
     if (nombre === "") {
         textoPregunta.textContent =
             "Tu nivel de intensidad de hábitos de uso es " +
@@ -782,989 +717,428 @@ if (tiburonAmigo && mensajeTiburon) {
     );
 }
 
-// BOTÓN PARA INICIAR LA PRUEBA
+// PRUEBA DE ATENCIÓN STROOP
 
-// PRUEBA DE ATENCIÓN SOSTENIDA TIPO PVT
+const COLORES_STROOP = [
+    { nombre: "ROJO", codigo: "#e53935" },
+    { nombre: "AZUL", codigo: "#1565c0" },
+    { nombre: "VERDE", codigo: "#2e7d32" },
+    { nombre: "AMARILLO", codigo: "#f9a825" }
+];
 
-const DURACION_PRUEBA = 90;
+const TOTAL_INTENTOS_PRACTICA = 4;
+const TOTAL_INTENTOS_PRUEBA = 20;
+const PAUSA_ENTRE_ESTIMULOS = 550;
 
-const ESPERA_MINIMA = 2000;
-const ESPERA_MAXIMA = 6000;
-
-const TIEMPO_MAXIMO_RESPUESTA = 1500;
-const LIMITE_LAPSO = 650;
-
-// PRÁCTICA ANTES DE LA PRUEBA
 let modoPractica = false;
-let intentosPractica = 0;
-const TOTAL_INTENTOS_PRACTICA = 3;
-
-// VARIABLES DE CONTROL
-
 let pruebaActiva = false;
-
-let esperandoEstimulo = false;
-let estimuloVisible = false;
-let anticipacionRegistrada = false;
-
-let segundosRestantes =
-    DURACION_PRUEBA;
-
-let momentoFinalPrueba = 0;
+let intentoActual = 0;
+let respuestaBloqueada = false;
 let momentoAparicion = 0;
-
-let temporizadorEspera = null;
-let temporizadorOmision = null;
-
-let intervaloReloj = null;
-let intervaloContador = null;
-
-
-// RESULTADOS DE LA PRUEBA
+let ultimoEstimulo = null;
+let temporizadorSiguiente = null;
 
 let respuestasCorrectas = 0;
-let anticipaciones = 0;
-let omisiones = 0;
-let lapsosAtencion = 0;
-
+let erroresStroop = 0;
 let tiemposReaccion = [];
 
 let resultadoConcentracion = {
     aciertos: 0,
     errores: 0,
-    perdidos: 0,
+    precision: 0,
     tiempoPromedio: 0,
-    mejorTiempo: 0,
-    lapsos: 0,
-    anticipaciones: 0,
-    puntaje: 0,
-    nivel: ""
+    mejorTiempo: 0
 };
 
-// BOTÓN PARA INICIAR
+botonIniciarPrueba.addEventListener("click", function () {
+    pantallaInstrucciones.style.display = "none";
+    pantallaJuego.style.display = "block";
 
-botonIniciarPrueba.addEventListener(
-    "click",
-    function () {
+    reiniciarDatosStroop();
+    modoPractica = true;
 
-        pantallaInstrucciones.style.display = "none";
-        pantallaJuego.style.display = "block";
+    prepararCuentaRegresiva();
 
-        reiniciarDatosPrueba();
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
 
-        modoPractica = true;
-        intentosPractica = 0;
-
-        tituloJuego.textContent = "MODO PRÁCTICA";
-        mensajeJuego.textContent =
-            "Harás 3 intentos de práctica. Estos resultados no se guardarán.";
-
-        tiempoJuegoTexto.textContent = "--";
-        aciertosJuegoTexto.textContent = "0";
-        erroresJuegoTexto.textContent = "0";
-
-        prepararCuentaRegresiva();
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    }
-);
-
-
-// DETECTAR TOQUES ANTICIPADOS
-
-zonaJuego.addEventListener(
-    "pointerdown",
-    function (evento) {
-
-        if (!pruebaActiva) {
-            return;
-        }
-
-        if (
-            evento.target.classList.contains(
-                "estimulo-pvt"
-            )
-        ) {
-            return;
-        }
-
-        if (
-            esperandoEstimulo &&
-            !anticipacionRegistrada
-        ) {
-            anticipacionRegistrada = true;
-
-            anticipaciones++;
-
-            erroresJuegoTexto.textContent =
-                anticipaciones;
-
-            mensajeJuego.textContent =
-                "Observa con atencion la pantalla.";
-
-            mostrarEfectoZona(
-                "error"
-            );
-        }
-    }
-);
-
-
-// CUENTA REGRESIVA
-
-function prepararCuentaRegresiva() {
-
-    let numeroCuenta = 3;
-
-    zonaJuego.innerHTML = "";
-
-    cuentaRegresiva.style.display = "block";
-    cuentaRegresiva.textContent = numeroCuenta;
-
-    zonaJuego.appendChild(cuentaRegresiva);
-
-    tituloJuego.textContent =
-        modoPractica
-            ? "Prepárate para practicar"
-            : "Prepárate";
-
-    mensajeJuego.textContent =
-        modoPractica
-            ? "Primero harás 3 intentos de práctica."
-            : "La prueba real está a punto de comenzar.";
-
-    const intervaloCuenta =
-        setInterval(function () {
-
-            numeroCuenta--;
-
-            if (numeroCuenta > 0) {
-
-                cuentaRegresiva.textContent =
-                    numeroCuenta;
-
-                return;
-            }
-
-            if (numeroCuenta === 0) {
-
-                cuentaRegresiva.textContent =
-                    "¡YA!";
-
-                return;
-            }
-
-            clearInterval(intervaloCuenta);
-
-            cuentaRegresiva.style.display =
-                "none";
-
-            if (modoPractica) {
-
-                comenzarPractica();
-
-            } else {
-
-                comenzarPruebaConcentracion();
-            }
-
-        }, 800);
-}
-
-// REINICIAR LOS DATOS
-
-function reiniciarDatosPrueba() {
+function reiniciarDatosStroop() {
+    clearTimeout(temporizadorSiguiente);
 
     pruebaActiva = false;
-
-    esperandoEstimulo = false;
-    estimuloVisible = false;
-    anticipacionRegistrada = false;
-
-    segundosRestantes =
-        DURACION_PRUEBA;
+    intentoActual = 0;
+    respuestaBloqueada = false;
+    ultimoEstimulo = null;
 
     respuestasCorrectas = 0;
-    anticipaciones = 0;
-    omisiones = 0;
-    lapsosAtencion = 0;
-
+    erroresStroop = 0;
     tiemposReaccion = [];
 
     resultadoConcentracion = {
         aciertos: 0,
         errores: 0,
-        perdidos: 0,
+        precision: 0,
         tiempoPromedio: 0,
-        mejorTiempo: 0,
-        lapsos: 0,
-        anticipaciones: 0,
-        puntaje: 0,
-        nivel: ""
+        mejorTiempo: 0
     };
 
-    tiempoJuegoTexto.textContent =
-        DURACION_PRUEBA;
-
-    aciertosJuegoTexto.textContent =
-        "0";
-
-    erroresJuegoTexto.textContent =
-        "0";
-
-    tituloJuego.textContent =
-        "Espera la señal";
-
-    mensajeJuego.textContent =
-        "Toca únicamente cuando aparezca el contador.";
-
+    actualizarMarcadores();
     zonaJuego.innerHTML = "";
-
-    zonaJuego.appendChild(
-        cuentaRegresiva
-    );
-}
-// =========================================
-// MODO PRÁCTICA
-// =========================================
-
-function comenzarPractica() {
-
-    pruebaActiva = true;
-    intentosPractica = 0;
-
-    tiempoJuegoTexto.textContent = "--";
-    aciertosJuegoTexto.textContent = "0";
-    erroresJuegoTexto.textContent = "0";
-
-    tituloJuego.textContent = "MODO PRÁCTICA";
-
-    mensajeJuego.textContent =
-        "Espera la señal y toca los números cuando aparezcan.";
-
-    programarSiguienteEstimulo();
+    zonaJuego.appendChild(cuentaRegresiva);
 }
 
-
-// TERMINAR LA PRÁCTICA
-
-function finalizarPractica() {
+function prepararCuentaRegresiva() {
+    let numeroCuenta = 3;
 
     pruebaActiva = false;
-    esperandoEstimulo = false;
-    estimuloVisible = false;
-
-    clearTimeout(temporizadorEspera);
-    clearTimeout(temporizadorOmision);
-    clearInterval(intervaloContador);
-
     zonaJuego.innerHTML = "";
+    cuentaRegresiva.style.display = "block";
+    cuentaRegresiva.textContent = numeroCuenta;
+    zonaJuego.appendChild(cuentaRegresiva);
 
-    tituloJuego.textContent =
-        "¡PRÁCTICA COMPLETADA!";
+    tituloJuego.textContent = modoPractica
+        ? "Prepárate para practicar"
+        : "Prepárate para la prueba real";
 
-    mensajeJuego.textContent =
-        "Ya sabes cómo funciona. A partir de ahora tus respuestas sí contarán para el resultado.";
+    mensajeJuego.textContent = modoPractica
+        ? "La práctica tiene 4 ejercicios y no se guardará."
+        : "Responde al color de la tinta en 20 ejercicios.";
 
-    const botonPruebaReal =
-        document.createElement("button");
+    const intervaloCuenta = setInterval(function () {
+        numeroCuenta--;
 
-    botonPruebaReal.type = "button";
-
-    botonPruebaReal.textContent =
-        "Comenzar prueba real";
-
-    zonaJuego.appendChild(
-        botonPruebaReal
-    );
-
-    botonPruebaReal.addEventListener(
-        "click",
-        function () {
-
-            modoPractica = false;
-
-            reiniciarDatosPrueba();
-
-            tituloJuego.textContent =
-                "Prepárate";
-
-            mensajeJuego.textContent =
-                "Ahora comienza la prueba real.";
-
-            prepararCuentaRegresiva();
+        if (numeroCuenta > 0) {
+            cuentaRegresiva.textContent = numeroCuenta;
+            return;
         }
-    );
+
+        if (numeroCuenta === 0) {
+            cuentaRegresiva.textContent = "¡YA!";
+            return;
+        }
+
+        clearInterval(intervaloCuenta);
+        cuentaRegresiva.style.display = "none";
+        comenzarBloqueStroop();
+    }, 800);
 }
-// COMENZAR LA PRUEBA
 
-function comenzarPruebaConcentracion() {
-
+function comenzarBloqueStroop() {
     pruebaActiva = true;
+    intentoActual = 0;
+    respuestaBloqueada = false;
 
-    momentoFinalPrueba =
-        performance.now() +
-        DURACION_PRUEBA * 1000;
-
-    intervaloReloj =
-        setInterval(function () {
-
-            const tiempoPendiente =
-                momentoFinalPrueba -
-                performance.now();
-
-            segundosRestantes =
-                Math.max(
-                    0,
-                    Math.ceil(
-                        tiempoPendiente / 1000
-                    )
-                );
-
-            tiempoJuegoTexto.textContent =
-                segundosRestantes;
-
-            if (tiempoPendiente <= 0) {
-
-                finalizarPruebaConcentracion();
-            }
-
-        }, 100);
-
-    programarSiguienteEstimulo();
-}
-
-// PREPARAR LA SIGUIENTE SEÑAL
-
-function programarSiguienteEstimulo() {
-    // Evitar que queden temporizadores anteriores activos
-    clearTimeout(temporizadorEspera);
-    clearTimeout(temporizadorOmision);
-    clearInterval(intervaloContador);
-
-    temporizadorEspera = null;
-    temporizadorOmision = null;
-    intervaloContador = null;
-    if (!pruebaActiva) {
-        return;
+    if (!modoPractica) {
+        respuestasCorrectas = 0;
+        erroresStroop = 0;
+        tiemposReaccion = [];
     }
 
-    esperandoEstimulo = true;
-    estimuloVisible = false;
-    anticipacionRegistrada = false;
+    tituloJuego.textContent = modoPractica
+        ? "MODO PRÁCTICA"
+        : "PRUEBA STROOP";
 
-    tituloJuego.textContent =
-        "Espera la señal";
-
-    mensajeJuego.textContent =
-        "Mantén la atención en el centro.";
-
-    zonaJuego.innerHTML =
-        '<div class="punto-espera">+</div>';
-
-    const espera =
-        ESPERA_MINIMA +
-        Math.random() *
-        (
-            ESPERA_MAXIMA -
-            ESPERA_MINIMA
-        );
-
-    temporizadorEspera =
-        setTimeout(function () {
-
-            mostrarEstimuloPVT();
-
-        }, espera);
+    mensajeJuego.textContent = "Selecciona el color de la tinta.";
+    actualizarMarcadores();
+    mostrarSiguienteEstimuloStroop();
 }
 
-// MOSTRAR EL CONTADOR
+function crearEstimuloStroop() {
+    let palabra;
+    let tinta;
 
-function mostrarEstimuloPVT() {
+    do {
+        palabra = COLORES_STROOP[
+            Math.floor(Math.random() * COLORES_STROOP.length)
+        ];
 
-    if (!pruebaActiva) {
-        return;
-    }
-
-    esperandoEstimulo = false;
-    estimuloVisible = true;
-
-    momentoAparicion =
-        performance.now();
-
-    tituloJuego.textContent =
-        "¡TOCA AHORA!";
-
-    mensajeJuego.textContent =
-        "Toca los números lo más rápido posible.";
-
-    const estimulo =
-        document.createElement(
-            "button"
-        );
-
-    estimulo.type =
-        "button";
-
-    estimulo.className =
-        "estimulo-pvt";
-
-    estimulo.textContent =
-        "000";
-
-    zonaJuego.innerHTML =
-        "";
-
-    zonaJuego.appendChild(
-        estimulo
+        tinta = COLORES_STROOP[
+            Math.floor(Math.random() * COLORES_STROOP.length)
+        ];
+    } while (
+        ultimoEstimulo &&
+        ultimoEstimulo.palabra === palabra.nombre &&
+        ultimoEstimulo.tinta === tinta.nombre
     );
-estimulo.style.position = "absolute";
 
-const margen = 12;
+    ultimoEstimulo = {
+        palabra: palabra.nombre,
+        tinta: tinta.nombre
+    };
 
-const espacioHorizontal =
-    zonaJuego.clientWidth -
-    estimulo.offsetWidth -
-    margen * 2;
+    return {
+        palabra: palabra.nombre,
+        tinta: tinta
+    };
+}
 
-const espacioVertical =
-    zonaJuego.clientHeight -
-    estimulo.offsetHeight -
-    margen * 2;
+function mostrarSiguienteEstimuloStroop() {
+    if (!pruebaActiva) {
+        return;
+    }
 
-const posicionX =
-    margen +
-    Math.random() *
-    Math.max(0, espacioHorizontal);
+    const totalIntentos = modoPractica
+        ? TOTAL_INTENTOS_PRACTICA
+        : TOTAL_INTENTOS_PRUEBA;
 
-const posicionY =
-    margen +
-    Math.random() *
-    Math.max(0, espacioVertical);
-
-estimulo.style.left =
-    posicionX + "px";
-
-estimulo.style.top =
-    posicionY + "px";
-
-    intervaloContador =
-        setInterval(function () {
-
-            const tiempoVisible =
-                Math.round(
-                    performance.now() -
-                    momentoAparicion
-                );
-
-            estimulo.textContent =
-                String(
-                    tiempoVisible
-                ).padStart(
-                    3,
-                    "0"
-                );
-
-        }, 16);
-
-    estimulo.addEventListener(
-        "pointerdown",
-        function (evento) {
-
-            evento.preventDefault();
-
-            evento.stopPropagation();
-
-            registrarRespuestaPVT();
-        },
-        {
-            once: true
+    if (intentoActual >= totalIntentos) {
+        if (modoPractica) {
+            finalizarPractica();
+        } else {
+            finalizarPruebaConcentracion();
         }
-    );
-
-    temporizadorOmision =
-        setTimeout(function () {
-
-            registrarOmisionPVT();
-
-        }, TIEMPO_MAXIMO_RESPUESTA);
-}
-
-
-// REGISTRAR UNA RESPUESTA
-
-function registrarRespuestaPVT() {
-
-    if (
-        !pruebaActiva ||
-        !estimuloVisible
-    ) {
         return;
     }
 
-    const tiempoReaccion =
-        Math.round(
-            performance.now() -
-            momentoAparicion
-        );
+    respuestaBloqueada = false;
 
-    estimuloVisible = false;
+    const estimulo = crearEstimuloStroop();
 
-    clearTimeout(
-        temporizadorOmision
+    zonaJuego.innerHTML = `
+        <div class="tarjeta-stroop">
+            <p class="instruccion-stroop">¿De qué color es la tinta?</p>
+
+            <div
+                class="palabra-stroop"
+                style="color: ${estimulo.tinta.codigo}"
+                aria-label="Palabra ${estimulo.palabra} escrita en color ${estimulo.tinta.nombre}"
+            >
+                ${estimulo.palabra}
+            </div>
+
+            <div class="opciones-stroop" role="group" aria-label="Opciones de color">
+                ${COLORES_STROOP.map(function (color) {
+                    return `
+                        <button
+                            type="button"
+                            class="boton-color-stroop"
+                            data-color="${color.nombre}"
+                            style="--color-boton: ${color.codigo}"
+                        >
+                            ${color.nombre}
+                        </button>
+                    `;
+                }).join("")}
+            </div>
+        </div>
+    `;
+
+    zonaJuego.querySelectorAll(".boton-color-stroop").forEach(function (boton) {
+        boton.addEventListener("click", function () {
+            registrarRespuestaStroop(
+                boton.dataset.color,
+                estimulo.tinta.nombre
+            );
+        });
+    });
+
+    momentoAparicion = performance.now();
+    actualizarMarcadores();
+}
+
+function registrarRespuestaStroop(colorElegido, colorCorrecto) {
+    if (!pruebaActiva || respuestaBloqueada) {
+        return;
+    }
+
+    respuestaBloqueada = true;
+
+    const tiempoReaccion = Math.round(
+        performance.now() - momentoAparicion
     );
 
-    clearInterval(
-        intervaloContador
-    );
-
-
-    // =====================================
-    // SI ESTAMOS EN MODO PRÁCTICA
-    // =====================================
+    const esCorrecta = colorElegido === colorCorrecto;
 
     if (modoPractica) {
-
-        intentosPractica++;
-
-        zonaJuego.innerHTML =
-            '<div class="resultado-reaccion">' +
-            tiempoReaccion +
-            " ms</div>";
-
-        aciertosJuegoTexto.textContent =
-            intentosPractica +
-            "/" +
-            TOTAL_INTENTOS_PRACTICA;
-
-        mensajeJuego.textContent =
-            "¡Bien! Ese fue tu intento de práctica.";
-
-        mostrarEfectoZona("acierto");
-
-        if (
-            intentosPractica >=
-            TOTAL_INTENTOS_PRACTICA
-        ) {
-
-            setTimeout(function () {
-                finalizarPractica();
-            }, 900);
-
-        } else {
-
-            setTimeout(function () {
-                programarSiguienteEstimulo();
-            }, 900);
-        }
-
-        return;
-    }
-
-
-    // =====================================
-    // DESDE AQUÍ CUENTA PARA LA PRUEBA REAL
-    // =====================================
-
-    tiemposReaccion.push(
-        tiempoReaccion
-    );
-
-    respuestasCorrectas++;
-
-    if (
-        tiempoReaccion >=
-        LIMITE_LAPSO
-    ) {
-        lapsosAtencion++;
-    }
-
-    aciertosJuegoTexto.textContent =
-        respuestasCorrectas;
-
-    zonaJuego.innerHTML =
-        '<div class="resultado-reaccion">' +
-        tiempoReaccion +
-        " ms</div>";
-
-    if (
-        tiempoReaccion >=
-        LIMITE_LAPSO
-    ) {
-
-        mensajeJuego.textContent =
-            "Respuesta registrada. Intenta mantener la atención.";
-
+        mensajeJuego.textContent = esCorrecta
+            ? `¡Correcto! La tinta era ${colorCorrecto}.`
+            : `La tinta era ${colorCorrecto}. Recuerda ignorar la palabra.`;
     } else {
+        tiemposReaccion.push(tiempoReaccion);
 
-        mensajeJuego.textContent =
-            "Respuesta registrada.";
+        if (esCorrecta) {
+            respuestasCorrectas++;
+            mensajeJuego.textContent = `¡Correcto! ${tiempoReaccion} ms`;
+        } else {
+            erroresStroop++;
+            mensajeJuego.textContent = `Incorrecto. La tinta era ${colorCorrecto}.`;
+        }
     }
 
-    mostrarEfectoZona(
-        "acierto"
-    );
+    mostrarEfectoZona(esCorrecta ? "acierto" : "error");
 
-    setTimeout(function () {
-        programarSiguienteEstimulo();
-    }, 650);
+    intentoActual++;
+    actualizarMarcadores();
+
+    zonaJuego.querySelectorAll(".boton-color-stroop").forEach(function (boton) {
+        boton.disabled = true;
+
+        if (boton.dataset.color === colorCorrecto) {
+            boton.classList.add("respuesta-correcta");
+        }
+    });
+
+    temporizadorSiguiente = setTimeout(
+        mostrarSiguienteEstimuloStroop,
+        PAUSA_ENTRE_ESTIMULOS
+    );
 }
-// REGISTRAR UNA OMISIÓN
 
-function registrarOmisionPVT() {
+function actualizarMarcadores() {
+    const totalIntentos = modoPractica
+        ? TOTAL_INTENTOS_PRACTICA
+        : TOTAL_INTENTOS_PRUEBA;
 
-    if (
-        !pruebaActiva ||
-        !estimuloVisible
-    ) {
-        return;
+    tiempoJuegoTexto.textContent = intentoActual + "/" + totalIntentos;
+
+    if (modoPractica) {
+        aciertosJuegoTexto.textContent = "--";
+        erroresJuegoTexto.textContent = "--";
+    } else {
+        aciertosJuegoTexto.textContent = respuestasCorrectas;
+        erroresJuegoTexto.textContent = erroresStroop;
     }
+}
 
-    estimuloVisible = false;
+function finalizarPractica() {
+    pruebaActiva = false;
+    clearTimeout(temporizadorSiguiente);
 
-    omisiones++;
-    lapsosAtencion++;
-
-    clearInterval(
-        intervaloContador
-    );
-
-    zonaJuego.innerHTML =
-        '<div class="resultado-reaccion perdida">' +
-        "Sin respuesta" +
-        "</div>";
-
+    tituloJuego.textContent = "¡PRÁCTICA COMPLETADA!";
     mensajeJuego.textContent =
-        "No respondiste a tiempo. Espera la siguiente señal.";
+        "Ahora comenzarás la prueba real. Estas respuestas sí se guardarán.";
 
-    mostrarEfectoZona(
-        "error"
-    );
+    zonaJuego.innerHTML = `
+        <div class="fin-practica-stroop">
+            <p>Recuerda: responde al color de la tinta, no a la palabra.</p>
+            <button id="btnPruebaReal" type="button">Comenzar prueba real</button>
+        </div>
+    `;
 
-    setTimeout(function () {
-
-        programarSiguienteEstimulo();
-
-    }, 650);
+    document.getElementById("btnPruebaReal").addEventListener("click", function () {
+        modoPractica = false;
+        intentoActual = 0;
+        respuestasCorrectas = 0;
+        erroresStroop = 0;
+        tiemposReaccion = [];
+        actualizarMarcadores();
+        prepararCuentaRegresiva();
+    });
 }
-
-
-// =========================================
-// EFECTO VISUAL
-// =========================================
 
 function mostrarEfectoZona(tipo) {
-
-    zonaJuego.classList.remove(
-        "acierto",
-        "error"
-    );
-
+    zonaJuego.classList.remove("acierto", "error");
     void zonaJuego.offsetWidth;
-
-    zonaJuego.classList.add(
-        tipo
-    );
+    zonaJuego.classList.add(tipo);
 
     setTimeout(function () {
-
-        zonaJuego.classList.remove(
-            tipo
-        );
-
+        zonaJuego.classList.remove(tipo);
     }, 230);
 }
 
-
-// TERMINAR LA PRUEBA
-
 function finalizarPruebaConcentracion() {
-
     if (!pruebaActiva) {
         return;
     }
 
     pruebaActiva = false;
-
-    esperandoEstimulo = false;
-    estimuloVisible = false;
-
-    clearInterval(
-        intervaloReloj
-    );
-
-    clearInterval(
-        intervaloContador
-    );
-
-    clearTimeout(
-        temporizadorEspera
-    );
-
-    clearTimeout(
-        temporizadorOmision
-    );
-
-    segundosRestantes = 0;
-
-    tiempoJuegoTexto.textContent =
-        "0";
+    clearTimeout(temporizadorSiguiente);
 
     calcularResultadoConcentracion();
-
     mostrarResultadoConcentracion();
 }
 
-
-// CALCULAR EL RESULTADO
-
 function calcularResultadoConcentracion() {
+    const totalRespuestas = respuestasCorrectas + erroresStroop;
 
-    const sumaTiempos =
-        tiemposReaccion.reduce(
-            function (
-                total,
-                tiempo
-            ) {
-                return (
-                    total +
-                    tiempo
-                );
-            },
-            0
-        );
+    const sumaTiempos = tiemposReaccion.reduce(function (total, tiempo) {
+        return total + tiempo;
+    }, 0);
 
-    const tiempoPromedio =
-        tiemposReaccion.length > 0
-            ? Math.round(
-                sumaTiempos /
-                tiemposReaccion.length
-            )
-            : 0;
+    const tiempoPromedio = tiemposReaccion.length > 0
+        ? Math.round(sumaTiempos / tiemposReaccion.length)
+        : 0;
 
-    const mejorTiempo =
-        tiemposReaccion.length > 0
-            ? Math.min(
-                ...tiemposReaccion
-            )
-            : 0;
+    const mejorTiempo = tiemposReaccion.length > 0
+        ? Math.min(...tiemposReaccion)
+        : 0;
 
-    let puntuacionVelocidad = 0;
-
-    if (tiempoPromedio > 0) {
-
-        puntuacionVelocidad =
-            100 -
-            (
-                tiempoPromedio -
-                350
-            ) *
-            0.15;
-
-        puntuacionVelocidad =
-            Math.max(
-                0,
-                Math.min(
-                    100,
-                    puntuacionVelocidad
-                )
-            );
-    }
-
-    let puntaje =
-        puntuacionVelocidad -
-        lapsosAtencion * 4 -
-        anticipaciones * 5 -
-        omisiones * 6;
-
-    puntaje =
-        Math.round(
-            Math.max(
-                0,
-                Math.min(
-                    100,
-                    puntaje
-                )
-            )
-        );
+    const precision = totalRespuestas > 0
+        ? Math.round((respuestasCorrectas / totalRespuestas) * 100)
+        : 0;
 
     resultadoConcentracion = {
-        aciertos:
-            respuestasCorrectas,
-
-        errores:
-            anticipaciones,
-
-        perdidos:
-            omisiones,
-
-        tiempoPromedio:
-            tiempoPromedio,
-
-        mejorTiempo:
-            mejorTiempo,
-
-        lapsos:
-            lapsosAtencion,
-
-        anticipaciones:
-            anticipaciones,
-
-        puntaje:
-            puntaje,
-
-        nivel:
-            obtenerNivelConcentracion(
-                puntaje
-            )
+        aciertos: respuestasCorrectas,
+        errores: erroresStroop,
+        precision: precision,
+        tiempoPromedio: tiempoPromedio,
+        mejorTiempo: mejorTiempo
     };
 }
 
-
-// CLASIFICAR EL RESULTADO
-
-function obtenerNivelConcentracion(
-    puntaje
-) {
-
-    if (puntaje >= 85) {
-        return "Muy alta";
-    }
-
-    if (puntaje >= 70) {
-        return "Alta";
-    }
-
-    if (puntaje >= 50) {
-        return "Media";
-    }
-
-    if (puntaje >= 30) {
-        return "Baja";
-    }
-
-    return "Muy baja";
-}
-
-
-// MOSTRAR EL RESULTADO
-
 function mostrarResultadoConcentracion() {
-
-    tituloJuego.textContent =
-        "Resultado de atención sostenida";
-
+    tituloJuego.textContent = "Resultado de la prueba Stroop";
     mensajeJuego.textContent =
-        "Esta puntuación pertenece únicamente al proyecto y no es un diagnóstico médico.";
+        "Estos resultados pertenecen al proyecto y no constituyen un diagnóstico médico.";
 
     zonaJuego.innerHTML = `
         <div class="resultado-concentracion">
-
-            <p>
-                Puntaje obtenido
-            </p>
+            <p>Precisión obtenida</p>
 
             <div class="puntaje-grande">
-                ${resultadoConcentracion.puntaje}/100
-            </div>
-
-            <div class="nivel-concentracion">
-                Atención ${resultadoConcentracion.nivel}
+                ${resultadoConcentracion.precision}%
             </div>
 
             <div class="estadisticas-juego">
+                <div class="estadistica-juego">
+                    <span>Aciertos</span>
+                    <strong>${resultadoConcentracion.aciertos}</strong>
+                </div>
 
                 <div class="estadistica-juego">
-                    <span>Respuestas</span>
+                    <span>Errores</span>
+                    <strong>${resultadoConcentracion.errores}</strong>
+                </div>
 
-                    <strong>
-                        ${resultadoConcentracion.aciertos}
-                    </strong>
+                <div class="estadistica-juego">
+                    <span>Precisión</span>
+                    <strong>${resultadoConcentracion.precision}%</strong>
                 </div>
 
                 <div class="estadistica-juego">
                     <span>Promedio</span>
-
-                    <strong>
-                        ${resultadoConcentracion.tiempoPromedio} ms
-                    </strong>
+                    <strong>${resultadoConcentracion.tiempoPromedio} ms</strong>
                 </div>
 
                 <div class="estadistica-juego">
                     <span>Mejor reacción</span>
-
-                    <strong>
-                        ${resultadoConcentracion.mejorTiempo} ms
-                    </strong>
+                    <strong>${resultadoConcentracion.mejorTiempo} ms</strong>
                 </div>
-
-                <div class="estadistica-juego">
-                    <span>Lapsos</span>
-
-                    <strong>
-                        ${resultadoConcentracion.lapsos}
-                    </strong>
-                </div>
-
-                <div class="estadistica-juego">
-                    <span>Anticipaciones</span>
-
-                    <strong>
-                        ${resultadoConcentracion.anticipaciones}
-                    </strong>
-                </div>
-
-                <div class="estadistica-juego">
-                    <span>Sin respuesta</span>
-
-                    <strong>
-                        ${resultadoConcentracion.perdidos}
-                    </strong>
-                </div>
-
             </div>
 
-            <button
-                id="btnFinalizarTodo"
-                type="button"
-            >
+            <button id="btnFinalizarTodo" type="button">
                 Finalizar y guardar resultados
             </button>
-
         </div>
     `;
 
-    const botonFinalizarTodo =
-        document.getElementById(
-            "btnFinalizarTodo"
-        );
+    const botonFinalizarTodo = document.getElementById("btnFinalizarTodo");
 
-    botonFinalizarTodo.addEventListener(
-        "click",
-        function () {
+    botonFinalizarTodo.addEventListener("click", function () {
+        botonFinalizarTodo.disabled = true;
+        botonFinalizarTodo.textContent = "Guardando resultados...";
 
-            botonFinalizarTodo.disabled =
-                true;
+        enviarResultadosCompletosAGoogleSheets();
 
-            botonFinalizarTodo.textContent =
-                "Guardando resultados...";
-
-            enviarResultadosCompletosAGoogleSheets();
-
-            setTimeout(function () {
-
-                botonFinalizarTodo.textContent =
-                    "Resultados guardados";
-
-                mensajeJuego.textContent =
-                    "La prueba terminó y los resultados fueron enviados.";
-
-            }, 1200);
-        }
-    );
+        setTimeout(function () {
+            botonFinalizarTodo.textContent = "Resultados guardados";
+            mensajeJuego.textContent =
+                "La prueba terminó y los resultados fueron enviados.";
+        }, 1200);
+    });
 }
 // CONEXIÓN COMPLETA CON GOOGLE SHEETS
 
@@ -1823,39 +1197,34 @@ function enviarResultadosCompletosAGoogleSheets() {
         0
     );
 
- const horasEstimadas =
-    Math.round(
-        (minutosOcultos / 60) * 100
-    ) / 100;
+    let horasEstimadas = 1;
 
-let nivelUso = 1;
+    if (minutosOcultos >= 270) {
+        horasEstimadas = 5;
+    } else if (minutosOcultos >= 210) {
+        horasEstimadas = 4;
+    } else if (minutosOcultos >= 150) {
+        horasEstimadas = 3;
+    } else if (minutosOcultos >= 90) {
+        horasEstimadas = 2;
+    }
 
-if (minutosOcultos < 120) {
-    nivelUso = 1;
-} else if (minutosOcultos < 240) {
-    nivelUso = 2;
-} else if (minutosOcultos < 360) {
-    nivelUso = 3;
-} else if (minutosOcultos < 480) {
-    nivelUso = 4;
-} else {
-    nivelUso = 5;
-}
-   const datos = {
-    nombre: nombreInput.value.trim(),
-    edad: respuestaEdad.respuesta,
+    const datos = {
+        nombre: nombreInput.value.trim(),
+        edad: respuestaEdad.respuesta,
+        horasEstimadas: horasEstimadas,
 
-    horasEstimadas: horasEstimadas,
-    nivelUso: nivelUso,
 
-    concentracion: {
-        tiempoPromedio: resultadoConcentracion.tiempoPromedio,
-        mejorTiempo: resultadoConcentracion.mejorTiempo,
-        lapsos: resultadoConcentracion.lapsos,
-        anticipaciones: resultadoConcentracion.anticipaciones,
-        omisiones: resultadoConcentracion.perdidos,
-    },
-};
+        concentracion: {
+            prueba: "Stroop",
+            tiempoPromedio: resultadoConcentracion.tiempoPromedio,
+            mejorTiempo: resultadoConcentracion.mejorTiempo,
+            aciertos: resultadoConcentracion.aciertos,
+            errores: resultadoConcentracion.errores,
+            precision: resultadoConcentracion.precision
+        },
+
+    };
 
     fetch(URL_GOOGLE_SHEETS, {
         method: "POST",
@@ -1874,5 +1243,6 @@ if (minutosOcultos < 120) {
         alert("No se pudieron guardar los resultados.");
     });
 }
+
 
 

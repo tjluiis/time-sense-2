@@ -1460,121 +1460,134 @@ button:active {
     touch-action: manipulation;
 }
 /* =====================================
-   PRUEBA DE ATENCIÓN PVT
+   PRUEBA DE ATENCIÓN STROOP
 ===================================== */
 
-.zona-pvt {
+.zona-stroop {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    cursor: pointer;
+    min-height: 420px;
+    height: auto;
+    padding: 22px;
     user-select: none;
 }
 
-.punto-espera {
-    color: rgba(
-        255,
-        255,
-        255,
-        0.72
-    );
-
-    font-size: 52px;
-    font-weight: 900;
-    line-height: 1;
+.ejemplo-stroop {
+    display: grid;
+    gap: 8px;
+    margin: 18px 0;
+    padding: 18px;
+    background: #ffffff;
+    border: 3px solid var(--negro-marino);
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 4px 4px 0 var(--negro-marino);
 }
 
-.estimulo-pvt {
-    width: 115px;
-    height: 90px;
-    min-width: 0;
-    min-height: 0;
-
-    margin: 0;
-    padding: 0;
-
-    border: 4px solid var(--negro-marino);
-    border-radius: 15px;
-
-    background: #eafcff;
-    color: #e33434;
-
-    font-family: inherit;
-    font-size: 38px;
+.palabra-ejemplo {
+    color: #1565c0;
+    font-size: 36px;
     font-weight: 900;
     letter-spacing: 2px;
-
-    box-shadow: 5px 6px 0 var(--negro-marino);
-    cursor: pointer;
-    touch-action: manipulation;
 }
 
-.estimulo-pvt:active {
-    transform:
-        translate(
-            5px,
-            5px
-        );
-
-    box-shadow:
-        3px
-        4px
-        0
-        var(--negro-marino);
-}
-
-.resultado-reaccion {
-    padding:
-        20px
-        30px;
-
-    border:
-        4px
-        solid
-        var(--negro-marino);
-
+.tarjeta-stroop {
+    width: 100%;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 4px solid var(--negro-marino);
     border-radius: 20px;
+    box-shadow: 7px 8px 0 var(--negro-marino);
+}
 
-    background: #d9fff0;
-    color: var(--negro-marino);
+.instruccion-stroop {
+    margin: 0;
+    color: #173447;
+    font-weight: 800;
+}
 
-    font-size:
-        clamp(
-            34px,
-            8vw,
-            62px
-        );
-
+.palabra-stroop {
+    margin: 28px 0;
+    font-size: clamp(40px, 10vw, 68px);
     font-weight: 900;
-
-    box-shadow:
-        7px
-        8px
-        0
-        var(--negro-marino);
+    line-height: 1;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
-.resultado-reaccion.perdida {
-    background: #ffd7d7;
-    color: #9c1d1d;
-
-    font-size:
-        clamp(
-            25px,
-            6vw,
-            45px
-        );
+.opciones-stroop {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
 }
 
-@media (
-    max-width: 700px
-) {
-   @media (max-width: 700px) {
-    .estimulo-pvt {
-        width: 100px;
-        height: 80px;
-        font-size: 34px;
+.boton-color-stroop {
+    margin: 0;
+    padding: 14px 8px;
+    background: var(--color-boton);
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+.boton-color-stroop:hover {
+    background: var(--color-boton);
+    filter: brightness(1.12);
+}
+
+.boton-color-stroop:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.boton-color-stroop.respuesta-correcta {
+    opacity: 1;
+    outline: 5px solid #ffffff;
+}
+
+.fin-practica-stroop {
+    width: 100%;
+    padding: 24px;
+    background: #ffffff;
+    border: 4px solid var(--negro-marino);
+    border-radius: 20px;
+    box-shadow: 7px 8px 0 var(--negro-marino);
+}
+
+.zona-juego.acierto {
+    animation: respuestaCorrectaStroop 0.23s ease;
+}
+
+.zona-juego.error {
+    animation: respuestaIncorrectaStroop 0.23s ease;
+}
+
+@keyframes respuestaCorrectaStroop {
+    50% { box-shadow: inset 0 0 0 12px #29c779, 7px 8px 0 var(--negro-marino); }
+}
+
+@keyframes respuestaIncorrectaStroop {
+    50% { box-shadow: inset 0 0 0 12px #ef5350, 7px 8px 0 var(--negro-marino); }
+}
+
+@media (max-width: 700px) {
+    .zona-stroop {
+        min-height: 390px;
+        padding: 13px;
+    }
+
+    .tarjeta-stroop {
+        padding: 17px 12px;
+    }
+
+    .palabra-stroop {
+        margin: 24px 0;
+        font-size: clamp(36px, 12vw, 52px);
+    }
+
+    .boton-color-stroop {
+        font-size: 13px;
+        padding: 13px 5px;
     }
 }
-}
+

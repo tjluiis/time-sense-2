@@ -209,142 +209,76 @@
 
     </div>
 <!-- =====================================
-     INSTRUCCIONES DE LA PRUEBA PVT
+     INSTRUCCIONES DE LA PRUEBA STROOP
 ===================================== -->
 
-<div
-    class="contenedor"
-    id="pantallaInstrucciones"
->
-    <p class="etiqueta-prueba">
-        PRUEBA DE ATENCIÓN SOSTENIDA
-    </p>
+<div class="contenedor" id="pantallaInstrucciones">
+    <p class="etiqueta-prueba">PRUEBA DE ATENCIÓN STROOP</p>
 
-    <h2>
-        Prepárate para medir tu atención
-    </h2>
+    <h2>Responde al color, no a la palabra</h2>
 
     <div class="caja-instrucciones">
+        <p>
+            Verás palabras de colores escritas con una tinta que puede ser diferente.
+            Debes elegir <strong>el color de la tinta</strong> e ignorar lo que dice la palabra.
+        </p>
 
-    <p>
-        La prueba durará
-        <strong>1 minuto y 30 segundos</strong>.
-    </p>
+        <div class="ejemplo-stroop" aria-label="Ejemplo de la prueba Stroop">
+            <span class="palabra-ejemplo">ROJO</span>
+            <strong>Respuesta correcta: AZUL</strong>
+        </div>
 
-    <p>
-        Primero aparecerá una señal de espera.
-        Después de un tiempo aleatorio,
-        aparecerá un contador de milisegundos
-        en alguna parte del área de juego.
-    </p>
+        <div class="regla-juego regla-correcta">
+            <span class="simbolo-regla">✓</span>
+            <span>Responde con uno de los cuatro botones de color.</span>
+        </div>
 
-    <div class="regla-juego regla-correcta">
-        <span class="simbolo-regla">
-            000
-        </span>
+        <div class="regla-juego regla-incorrecta">
+            <span class="simbolo-regla">✋</span>
+            <span>No respondas según el significado de la palabra.</span>
+        </div>
 
-        <span>
-            Cuando aparezcan los números,
-            tócalos tan rápido como puedas.
-        </span>
+        <p>
+            Primero harás 4 ejercicios de práctica. Después comenzará la prueba real
+            de 20 ejercicios. Solo se guardarán los resultados de la prueba real.
+        </p>
+
+        <p class="aviso-prueba">
+            Esta es una adaptación educativa de la prueba Stroop y no constituye
+            un diagnóstico médico.
+        </p>
     </div>
 
-    <div class="regla-juego regla-incorrecta">
-        <span class="simbolo-regla">
-            ✋
-        </span>
-
-        <span>
-            No toques el área de juego
-            antes de que aparezcan los números.
-        </span>
-    </div>
-
-    <p>
-        El objetivo aparecerá en diferentes lugares,
-        así que mantén la atención en toda el área de juego.
-    </p>
-
-    <p>
-        La prueba medirá tu tiempo de reacción
-        y también registrará respuestas anticipadas,
-        lapsos de atención y momentos en los que
-        no respondiste a tiempo.
-    </p>
-
-    <p>
-        Este proceso se repetirá varias veces
-        hasta que el tiempo llegue a cero.
-    </p>
-
-    <p class="aviso-prueba">
-        Esta actividad está inspirada en una prueba
-        de atención sostenida tipo PVT.
-        Es una adaptación educativa y no constituye
-        un diagnóstico médico.
-    </p>
-
-</div>
-
-    <button
-        id="btnIniciarPrueba"
-        type="button"
-    >
-       Comenzar práctica
-    </button>
+    <button id="btnIniciarPrueba" type="button">Comenzar práctica</button>
 </div>
 
 <!-- =====================================
-     PANTALLA DE LA PRUEBA PVT
+     PANTALLA DE LA PRUEBA STROOP
 ===================================== -->
 
-<div
-    class="contenedor contenedor-juego"
-    id="pantallaJuego"
->
+<div class="contenedor contenedor-juego" id="pantallaJuego">
     <div class="cabecera-juego">
-
         <div class="dato-juego">
-            <span>Tiempo</span>
-
-            <strong id="tiempoJuego">
-                90
-            </strong>
+            <span>Progreso</span>
+            <strong id="tiempoJuego">0/20</strong>
         </div>
 
         <div class="dato-juego">
-            <span>Respuestas</span>
-
-            <strong id="aciertosJuego">
-                0
-            </strong>
+            <span>Aciertos</span>
+            <strong id="aciertosJuego">0</strong>
         </div>
 
         <div class="dato-juego">
-            <span>Anticipaciones</span>
-
-            <strong id="erroresJuego">
-                0
-            </strong>
+            <span>Errores</span>
+            <strong id="erroresJuego">0</strong>
         </div>
-
     </div>
 
-    <h2 id="tituloJuego">
-        Espera la señal
-    </h2>
+    <h2 id="tituloJuego">Prueba Stroop</h2>
+    <p id="mensajeJuego">Selecciona el color de la tinta.</p>
 
-    <p id="mensajeJuego">
-        Toca únicamente cuando aparezca el contador.
-    </p>
-
-    <div
-        id="zonaJuego"
-        class="zona-juego zona-pvt"
-    >
-        <p id="cuentaRegresiva">
-            3
-        </p>
+    <div id="zonaJuego" class="zona-juego zona-stroop">
+        <p id="cuentaRegresiva">3</p>
     </div>
 </div>
 <script src="script.js"></script>
